@@ -30,28 +30,33 @@ const Details: React.FC<Props> = ({ dataBeers, randomDataBeers }) => {
   if (!singleBeer) return <p>Loading ...</p>;
 
   return (
-    <section className="stn-details flex">
-      <img src={singleBeer.image_url} alt={singleBeer.name} />
-      <article className="details-title flex">
-        <h1>{singleBeer.name}</h1>
-        <p>{singleBeer.tagline}</p>
-        <div>
-          <p>First brewed:</p>
-          <p>{singleBeer.first_brewed}</p>
-        </div>
-        <div>
-          <p>Attenuation level:</p>
-          <p>{singleBeer.attenuation_level}</p>
-        </div>
-        <p>{singleBeer.description}</p>
-      </article>
-      <button type="button" onClick={() => navigate(-1)}>
-        {" "}
-        <Back />
-      </button>
-
+    <>
+      <section className="stn-details flex">
+        <img src={singleBeer.image_url} alt={singleBeer.name} />
+        <article className="details-text flex">
+          <h1 className="details-name">{singleBeer.name}</h1>
+          <p className="details-tagline">{singleBeer.tagline}</p>
+          <div className="flex mini-textbox">
+            <p>First brewed:</p>
+            <p>{singleBeer.first_brewed}</p>
+          </div>
+          <div className="flex mini-textbox">
+            <p>Attenuation level:</p>
+            <p>{singleBeer.attenuation_level}</p>
+          </div>
+          <p className="details-desc">{singleBeer.description}</p>
+          <button
+            className="btn-back"
+            type="button"
+            onClick={() => navigate(-1)}
+          >
+            {" "}
+            <Back />
+          </button>
+        </article>
+      </section>{" "}
       <Navbar />
-    </section>
+    </>
   );
 };
 

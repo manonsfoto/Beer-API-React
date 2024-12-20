@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <nav className="flex">
+    <nav className="flex sticky">
       <Link to={"/"}>
         <div className="logo-box">
           <Logo />

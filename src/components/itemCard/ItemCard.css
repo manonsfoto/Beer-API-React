@@ -1,8 +1,45 @@
 .itemcard {
   border-bottom: 2px solid #33333385;
-  flex-direction: row;
+
+  gap: 2rem;
   padding: 4rem;
 }
 .itemcard img {
-  width: 9.5rem;
+  width: 100%;
+  border-radius: 1rem;
+}
+.card-name {
+  font-family: "Roboto-Medium";
+  font-size: 3rem;
+  color: #333333;
+}
+.card-tagline {
+  font-size: 1.8rem;
+  color: #ffca41;
+  margin-bottom: 1.3rem;
+}
+.card-createdBy {
+  font-size: 1.6rem;
+  font-family: "Roboto-Medium";
+  color: #333333;
+  margin-bottom: 4rem;
+}
+.btn-details {
+  font-size: 2rem;
+  font-family: "Roboto-Medium";
+  color: #fff;
+  background-color: #ffca41;
+  border-radius: 4rem;
+
+  padding: 0.2rem 2.2rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.btn-details:hover {
+  background-color: #ff9d41;
+}
+.card-textbox {
+  align-items: self-start;
+  width: 100%;
 }

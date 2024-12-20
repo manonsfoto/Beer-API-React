@@ -2,4 +2,11 @@
   background-color: #ffca41;
   color: #fff;
   font-size: 3rem;
+  padding-left: 1.6rem;
+  margin-bottom: 0.7rem;
+}
+.teaser-card p {
+  font-family: "Roboto-Medium";
+  font-size: 1.8rem;
+  color: #333333;
 }

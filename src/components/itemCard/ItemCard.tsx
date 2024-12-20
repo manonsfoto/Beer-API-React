@@ -8,12 +8,14 @@ const ItemCard: React.FC<Props> = ({ singleBeer }) => {
   return (
     <article className="itemcard flex">
       <img src={singleBeer.image_url} alt={singleBeer.name} />
-      <div>
-        <p>{singleBeer.name}</p>
-        <p>{singleBeer.tagline}</p>
-        <p>Created by: {singleBeer.name}</p>
+      <div className="card-textbox flex">
+        <p className="card-name">{singleBeer.name}</p>
+        <p className="card-tagline">{singleBeer.tagline}</p>
+        <p className="card-createdBy">Created by: {singleBeer.name}</p>
         <Link to={`/allbeers/${singleBeer._id}`}>
-          <button type="button">Details</button>
+          <button className="btn-details" type="button">
+            Details
+          </button>
         </Link>
       </div>
     </article>

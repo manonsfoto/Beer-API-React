@@ -7,10 +7,14 @@ interface Props {
 }
 const List: React.FC<Props> = ({ dataBeers }) => {
   return (
-    <section className="stn-list">
-      {dataBeers.map((singleBeer) => (
-        <ItemCard key={singleBeer._id} singleBeer={singleBeer} />
-      ))}
+    <section>
+      <main className="stn-list">
+        {" "}
+        {dataBeers.map((singleBeer) => (
+          <ItemCard key={singleBeer._id} singleBeer={singleBeer} />
+        ))}
+      </main>
+
       <Navbar />
     </section>
   );

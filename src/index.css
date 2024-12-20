@@ -39,19 +39,9 @@ a {
   align-items: center;
   flex-direction: column;
 }
-
-.active {
-  text-decoration: underline;
-  font-weight: bold;
-}
-button {
-  padding: 1.2rem 1.6rem;
-  font-size: 1.6rem;
-  font-family: "Roboto-Black";
-  color: #219653;
-  border: 3px solid #6fcf97;
-  border-radius: 10px;
-  background-color: #fff;
-  margin-left: 0.8rem;
-  cursor: pointer;
+.sticky {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
