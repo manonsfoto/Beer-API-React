@@ -1,28 +1,30 @@
 .itemcard {
   border-bottom: 2px solid #33333385;
-
+  flex-direction: row;
   gap: 2rem;
-  padding: 4rem;
+  padding: 1.2rem;
+  width: 100%;
+  justify-content: space-between;
 }
 .itemcard img {
-  width: 100%;
+  width: 50%;
   border-radius: 1rem;
 }
 .card-name {
   font-family: "Roboto-Medium";
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: #333333;
 }
 .card-tagline {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: #ffca41;
   margin-bottom: 1.3rem;
 }
 .card-createdBy {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-family: "Roboto-Medium";
   color: #333333;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .btn-details {
   font-size: 2rem;
