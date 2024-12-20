@@ -1,0 +1,8 @@
+.itemcard {
+  border-bottom: 2px solid #33333385;
+  flex-direction: row;
+  padding: 4rem;
+}
+.itemcard img {
+  width: 9.5rem;
+}
