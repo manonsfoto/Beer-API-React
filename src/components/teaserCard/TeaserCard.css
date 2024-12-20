@@ -1,4 +1,6 @@
 .teaser-card h1 {
+  position: relative;
+  bottom: 3px;
   background-color: #ffca41;
   color: #fff;
   font-size: 3rem;
