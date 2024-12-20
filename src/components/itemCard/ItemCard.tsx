@@ -12,7 +12,7 @@ const ItemCard: React.FC<Props> = ({ singleBeer }) => {
         <p className="card-name">{singleBeer.name}</p>
         <p className="card-tagline">{singleBeer.tagline}</p>
         <p className="card-createdBy">Created by: {singleBeer.name}</p>
-        <Link to={`/allbeers/${singleBeer._id}`}>
+        <Link to={`/beers/${singleBeer._id}`}>
           <button className="btn-details" type="button">
             Details
           </button>

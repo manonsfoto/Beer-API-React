@@ -10,7 +10,7 @@ interface Props {
 const Home: React.FC<Props> = ({ counter, setCounter }) => {
   return (
     <section className="stn-home flex">
-      <Link to={"allbeers"}>
+      <Link to={"beers"}>
         {" "}
         <TeaserCard title={"All Beers"} imgUrl={imgAllbeers} />
       </Link>

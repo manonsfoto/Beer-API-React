@@ -34,13 +34,13 @@ function App() {
           index
           element={<Home counter={counter} setCounter={setCounter} />}
         />
-        <Route path="allbeers" element={<List dataBeers={dataBeers} />} />
+        <Route path="beers" element={<List dataBeers={dataBeers} />} />
         <Route
           path="beers/random"
           element={<Details randomDataBeers={randomDataBeers} />}
         />
         <Route
-          path="allbeers/:idBeer"
+          path="beers/:idBeer"
           element={<Details dataBeers={dataBeers} />}
         />
       </Route>
