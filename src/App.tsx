@@ -14,19 +14,31 @@ import { IBeer } from "./interface/IBeer";
 
 function App() {
   const [dataBeers, setDataBeers] = useState<IBeer[]>([]);
-
+  const [randomDataBeers, setRandomDataBeers] = useState<IBeer | null>(null);
+  const [counter, setCounter] = useState<number>(0);
   useEffect(() => {
     fetch("https://ih-beers-api2.herokuapp.com/beers")
       .then((res) => res.json())
       .then((res: IBeer[]) => setDataBeers(res));
   }, []);
+  useEffect(() => {
+    fetch("https://ih-beers-api2.herokuapp.com/beers/random")
+      .then((res) => res.json())
+      .then((res: IBeer) => setRandomDataBeers(res));
+  }, [counter]);
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} />
+        <Route
+          index
+          element={<Home counter={counter} setCounter={setCounter} />}
+        />
         <Route path="allbeers" element={<List dataBeers={dataBeers} />} />
-        {/* <Route path="beers/random" element={<Details />} /> */}
+        <Route
+          path="beers/random"
+          element={<Details randomDataBeers={randomDataBeers} />}
+        />
         <Route
           path="allbeers/:idBeer"
           element={<Details dataBeers={dataBeers} />}

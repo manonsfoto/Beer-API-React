@@ -2,26 +2,33 @@ import { useEffect, useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import "./Details.css";
 import { IBeer } from "../../interface/IBeer";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import Back from "../../assets/back/Back";
 interface Props {
-  dataBeers: IBeer[];
+  dataBeers?: IBeer[];
+  randomDataBeers?: IBeer | null;
 }
-const Details: React.FC<Props> = ({ dataBeers }) => {
+const Details: React.FC<Props> = ({ dataBeers, randomDataBeers }) => {
   const [singleBeer, setSingleBeer] = useState<IBeer | null>(null);
   const { idBeer } = useParams();
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (idBeer && dataBeers) {
       const findBeerById = dataBeers.find(
         (singleBeer) => singleBeer._id === idBeer
       );
       setSingleBeer(findBeerById || null);
-    } else {
-      console.log("idBeer oder dataBeers nicht gefunden");
     }
-  }, [idBeer]);
+  }, [idBeer, dataBeers]);
+
+  useEffect(() => {
+    if (randomDataBeers) {
+      setSingleBeer(randomDataBeers);
+    }
+  }, []);
 
   if (!singleBeer) return <p>Loading ...</p>;
+
   return (
     <section className="stn-details flex">
       <img src={singleBeer.image_url} alt={singleBeer.name} />
@@ -38,7 +45,11 @@ const Details: React.FC<Props> = ({ dataBeers }) => {
         </div>
         <p>{singleBeer.description}</p>
       </article>
-      <button type="button">back</button>
+      <button type="button" onClick={() => navigate(-1)}>
+        {" "}
+        <Back />
+      </button>
+
       <Navbar />
     </section>
   );
