@@ -21,7 +21,7 @@ html {
   font-family: "Roboto-Black", Helvetica, sans-serif;
 }
 body {
-  width: 414px;
+  max-width: 414px;
   margin: 0 auto;
 }
 
